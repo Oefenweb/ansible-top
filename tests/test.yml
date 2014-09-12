@@ -1,0 +1,6 @@
+---
+# test file for top
+- hosts: localhost
+  remote_user: root
+  roles:
+    - ansible-top

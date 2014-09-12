@@ -1,0 +1,8 @@
+---
+# defaults file for top
+top_toprc_destinations:
+  # new users
+  - /etc/skel
+  # current user
+  - "{{ ansible_env.HOME }}"
+top_replace_toprc: false
