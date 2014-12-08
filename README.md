@@ -1,4 +1,6 @@
-## top [![Build Status](https://travis-ci.org/Oefenweb/ansible-top.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-top)
+## top
+
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-top.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-top) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-top-blue.svg)](https://galaxy.ansible.com/list#/roles/1725)
 
 Set up top in Debian-like systems.
 
