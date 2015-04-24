@@ -11,10 +11,10 @@
 - name: create configuration file
   copy:
     src: etc/skel/.toprc
-    dest: "{{ item }}/.toprc"
-    owner: root
-    group: root
-    mode: 0644
+    dest: "{{ item.value.dest }}/.toprc"
+    owner: "{{ item.value.owner | default('root') }}"
+    group: "{{ item.value.group | default('root') }}"
+    mode: "{{ item.value.mode | default('0644') }}"
     force: "{{ 'yes' if top_replace_toprc else 'no' }}"
-  with_items: top_toprc_destinations
+  with_dict: top_toprc_destinations
   tags: [configuration, top, top-configuration]
