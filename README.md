@@ -10,8 +10,8 @@ None
 
 #### Variables
 
-* `top_toprc_destinations`: [default: `[/etc/skel/.config/top, {{ ansible_env.HOME }}/.config/top]`]: Destinations to copy the toprc file to
-* `top_replace_toprc`: [default: `false`]: Whether or not to overwrite existing toprc files
+* `top_toprc_destinations`: [default: `{skell: dest: /etc/skel, current: dest: "{{ ansible_env.HOME }}"}`]: Destinations to copy the toprc file to
+* `top_replace_toprc`: [default: `true`]: Whether or not to overwrite existing toprc files
 
 ## Dependencies
 

@@ -4,6 +4,8 @@
   apt:
     name: procps
     state: latest
+    update_cache: true
+    cache_valid_time: 3600
   tags: [configuration, top, top-install]
 
 - name: create configuration file
