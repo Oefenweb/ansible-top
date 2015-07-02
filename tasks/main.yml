@@ -13,7 +13,7 @@
     src: etc/skel/.toprc
     dest: "{{ item.value.dest }}/.toprc"
     owner: "{{ item.value.owner | default('root') }}"
-    group: "{{ item.value.group | default('root') }}"
+    group: "{{ item.value.group | default(item.value.owner) | default('root') }}"
     mode: "{{ item.value.mode | default('0644') }}"
     force: "{{ 'yes' if top_replace_toprc else 'no' }}"
   with_dict: top_toprc_destinations
