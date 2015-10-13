@@ -1,10 +1,10 @@
----
 # test file for top
+---
 - hosts: all
   remote_user: vagrant
   sudo: true
   roles:
-    - top
+    - ../../
   vars:
     top_toprc_destinations:
       skell:
