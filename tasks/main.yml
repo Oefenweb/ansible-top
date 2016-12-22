@@ -2,11 +2,15 @@
 ---
 - name: install
   apt:
-    name: procps
-    state: latest
+    name: "{{ item }}"
+    state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
-  tags: [configuration, top, top-install]
+  with_items: "{{ top_dependencies }}"
+  tags:
+    - configuration
+    - top
+    - top-install
 
 - name: create configuration file
   copy:
@@ -16,5 +20,8 @@
     group: "{{ item.value.group | default(item.value.owner) | default('root') }}"
     mode: "{{ item.value.mode | default('0644') }}"
     force: "{{ 'yes' if top_replace_toprc else 'no' }}"
-  with_dict: top_toprc_destinations
-  tags: [configuration, top, top-configuration]
+  with_dict: "{{ top_toprc_destinations }}"
+  tags:
+    - configuration
+    - top
+    - top-configuration

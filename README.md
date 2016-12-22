@@ -1,6 +1,6 @@
 ## top
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-top.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-top) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-top-blue.svg)](https://galaxy.ansible.com/list#/roles/1725)
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-top.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-top) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-top-blue.svg)](https://galaxy.ansible.com/tersmitten/top)
 
 Set up top in Debian-like systems.
 
@@ -29,7 +29,7 @@ None
 ---
 - hosts: all
   roles:
-  - top
+    - top
 ```
 
 #### License
