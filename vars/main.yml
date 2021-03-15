@@ -1,4 +1,4 @@
-# vars file for top
+# vars file
 ---
 top_dependencies:
   - procps

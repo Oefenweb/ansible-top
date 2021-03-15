@@ -1,6 +1,7 @@
-# meta file for top
+# meta file
 ---
 galaxy_info:
+  namespace: oefenweb
   role_name: top
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
