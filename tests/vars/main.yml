@@ -1,0 +1,11 @@
+# vars file
+---
+top_toprc_destinations:
+  skell:
+    dest: /etc/skel
+  current:
+    dest: "{{ ansible_env.HOME }}"
+  dummy:
+    dest: /home/dummy
+    owner: dummy
+    group: dummy

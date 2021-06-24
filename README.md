@@ -1,6 +1,7 @@
 ## top
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-top.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-top) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-top-blue.svg)](https://galaxy.ansible.com/Oefenweb/top)
+[![CI](https://github.com/Oefenweb/ansible-top/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-top/actions?query=workflow%3ACI)
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-top-blue.svg)](https://galaxy.ansible.com/Oefenweb/top)
 
 Set up top in Debian-like systems.
 
