@@ -11,7 +11,38 @@
     - top
     - top-install
 
-- name: create configuration file
+- name: create configuration directory
+  ansible.builtin.file:
+    path: "{{ item.value.dest }}"
+    owner: "{{ item.value.owner | default('root') }}"
+    group: "{{ item.value.group | default(item.value.owner) | default('root') }}"
+    state: directory
+    mode: '0755'
+  with_dict: "{{ top_toprc_destinations }}"
+  when: "'procps' in item.value.dest"
+  tags:
+    - configuration
+    - top
+    - top-configuration
+    - top-configuration-new
+
+- name: create configuration file (new)
+  ansible.builtin.copy:
+    src: etc/skel/.config/procps/toprc
+    dest: "{{ item.value.dest }}/toprc"
+    owner: "{{ item.value.owner | default('root') }}"
+    group: "{{ item.value.group | default(item.value.owner) | default('root') }}"
+    mode: "{{ item.value.mode | default('0644') }}"
+    force: "{{ 'yes' if top_replace_toprc else 'no' }}"
+  with_dict: "{{ top_toprc_destinations }}"
+  when: "'procps' in item.value.dest"
+  tags:
+    - configuration
+    - top
+    - top-configuration
+    - top-configuration-new
+
+- name: create configuration file (old)
   ansible.builtin.copy:
     src: etc/skel/.toprc
     dest: "{{ item.value.dest }}/.toprc"
@@ -20,7 +51,9 @@
     mode: "{{ item.value.mode | default('0644') }}"
     force: "{{ 'yes' if top_replace_toprc else 'no' }}"
   with_dict: "{{ top_toprc_destinations }}"
+  when: "not 'procps' in item.value.dest"
   tags:
     - configuration
     - top
     - top-configuration
+    - top-configuration-old
