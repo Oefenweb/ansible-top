@@ -5,7 +5,11 @@ top_toprc_destinations:
     dest: /etc/skel
   current:
     dest: "{{ ansible_facts['env']['HOME'] }}"
-  dummy:
-    dest: /home/dummy
-    owner: dummy
-    group: dummy
+  foo:
+    dest: /home/foo
+    owner: foo
+    group: foo
+  bar:
+    dest: /home/bar/.config/procps/toprc
+    owner: bar
+    group: bar

@@ -2,4 +2,7 @@
 ---
 - name: create user (if needed)
   ansible.builtin.user:
-    name: dummy
+    name: "{{ item }}"
+  with_items:
+    - foo
+    - bar
